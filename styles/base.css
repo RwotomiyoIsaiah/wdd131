@@ -45,7 +45,7 @@ header{
 
 }
 
-ul{
+nav{
     background-color: var(--accent-color);
     list-style-type: none;
     display: flex;
@@ -55,6 +55,18 @@ ul{
     padding: 1rem;
     border-bottom: 5px solid var(--heading-color);
     
+}
+li{
+    background-color: var(--accent-color);
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 1rem;
+    border-bottom: 5px solid var(--heading-color);
+
 }
 li{
     margin: 10px;
