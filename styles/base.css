@@ -1,0 +1,108 @@
+:root {
+    --primary-color: rgb(3, 69, 0);
+    --accent1-color: black;
+    --accent2-color: whitesmoke;
+    --accent-color:  rgb(200, 238, 250);
+    --heading-font: "Roboto", sans-serif;
+    --heading-color: rgb(2, 2, 120);
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--heading-font);
+    
+}
+
+h1{
+    font-weight: 400;
+    padding: 1rem;
+    grid-column: span 4 ;
+}
+h2{
+    font-weight: 100;
+    padding: 1rem;
+    grid-column: span 4 ;
+    background-color: var(--heading-color);
+    color: var(--accent2-color);
+    border-radius: 10px;
+}
+p{
+    margin: 1rem;
+}
+
+
+#course-title{
+    color: var(--accent2-color);
+    background-color: var(--heading-color);
+    display: block;
+    text-align: center;
+    font-family: var(--heading-font);
+}
+
+ul{
+    background-color: var(--accent-color);
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 1rem;
+    border-bottom: 5px solid var(--heading-color);
+    
+}
+li{
+    margin: 10px;
+    flex: 1 0 auto;
+}
+nav a:hover {
+	text-decoration: overline;
+    color: var(--primary-color);
+}
+
+main{
+    background-color: var(--accent-color);
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 2rem auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 2rem auto;
+    border: 5px solid var(--heading-color);
+    border-radius: 1rem;
+}
+.card{
+    background-color: var(--accent2-color);
+    border: 5px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    width: 95%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#me{
+    grid-column: span 3;
+    color: var(--accent1-color);
+}
+section ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--accent2-color); 
+}
+footer{
+    color: var(--accent2-color);
+    background-color: var(--heading-color);
+    display: block;
+    text-align: center;
+    font-family: var(--heading-font);
+    padding: 5px;
+
+}
