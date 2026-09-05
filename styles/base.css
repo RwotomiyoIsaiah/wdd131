@@ -56,7 +56,7 @@ nav{
     border-bottom: 5px solid var(--heading-color);
     
 }
-section li{
+section list{
     background-color: var(--accent-color);
     list-style-type: none;
     display: flex;
