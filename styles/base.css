@@ -20,14 +20,7 @@ h1{
     padding: 1rem;
     grid-column: span 4 ;
 }
-span p{
-    font-size: 1.5rem;
-    
-    font-style: bold;
-    font-weight: 400;
-    padding: 1rem;
-    grid-column: span 4 ;
-}
+
 h2{
     font-weight: 100;
     padding: 1rem;
@@ -64,6 +57,15 @@ nav{
     border-bottom: 5px solid var(--heading-color);
     
 }
+ul{   background-color: var(--accent-color);
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 1rem;
+    border-bottom: 5px solid var(--heading-color);}
 section list{
     background-color: var(--accent-color);
     list-style-type: none;
