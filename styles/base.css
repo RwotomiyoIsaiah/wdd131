@@ -40,6 +40,10 @@ p{
     text-align: center;
     font-family: var(--heading-font);
 }
+header{
+    text-align: center;
+
+}
 
 ul{
     background-color: var(--accent-color);
@@ -71,7 +75,6 @@ main{
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 2rem auto;
     border: 5px solid var(--heading-color);
     border-radius: 1rem;
 }
