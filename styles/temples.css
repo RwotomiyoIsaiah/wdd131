@@ -61,7 +61,6 @@ header,footer,main{
 }
 #menu {
 	font-size: 1.5rem;
-	border: 0;
 	background: var(--accent-color);
     border-radius: 5px;
     border: 2px solid var(--accent1-color);
