@@ -66,6 +66,7 @@ ul{   background-color: var(--accent-color);
     gap: 3rem;
     padding: 1rem;
     border-bottom: 5px solid var(--heading-color);}
+
 section list{
     background-color: var(--accent-color);
     list-style-type: none;

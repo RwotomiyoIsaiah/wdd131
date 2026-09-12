@@ -1,0 +1,43 @@
+@media only screen and (min-width: 40.5em){
+    header{
+        display: block;
+    }
+    nav{
+        display: flex;
+        flex-direction: row;
+    }
+    main{
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 1rem auto;
+    }
+    #temple-album {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        
+        max-width:1200px;
+        margin: 0 auto;
+    }
+
+    figure {
+        max-width: 100%;
+    }
+    
+	h1 {
+		font-size: 2rem;
+	}
+    	#menu {
+		display: none;
+	}
+
+	.navigation {
+		flex-direction: row;
+	}
+
+	.navigation a {
+		display: block;
+		flex: 1 1 100%;
+	}
+
+
+}
