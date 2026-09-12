@@ -17,7 +17,7 @@
 
 nav{
     display: none;
-    width: 0 auto;
+    width: auto;
     align-self: center;
     gap:1rem;
     margin: 1rem auto;
@@ -38,7 +38,6 @@ nav a {
     color: var(--accent1-color); 
     width: 100%;
     background-color: var(--primary-color);
-    border:  20px solid var(--accent2-color) ;
     border-radius: 10px;
     border: 2px solid var(--accent1-color)
 }
@@ -100,11 +99,7 @@ main{
     border-radius: 10px;
     border:  5px solid var(--heading-color) ;
 }
-#temple-album{
-    width: auto;
-    display:flex;
-    flex-wrap: wrap;
-}
+
 #temple-album {
     display: grid;
     grid-template-columns: 1fr;
@@ -140,9 +135,6 @@ nav a:hover {
     background-color: var(--accent-color);
 }
 
-figcaption{
-    color: var(--heading-color);
-}
 footer{
     display: flex;
     flex-direction: row;
