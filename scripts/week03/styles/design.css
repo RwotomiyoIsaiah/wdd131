@@ -1,0 +1,53 @@
+body {
+	font-family: Roboto, helvetica, sans-serif;
+}
+
+header,
+main,
+footer {
+	max-width: 760px;
+	margin: 0 auto;
+}
+
+h1 {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.banner {
+    background-color: #293170;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+h2 {
+	color: navy;
+	text-align: left;
+    grid-column: span 2;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin:1rem;
+
+}
+
+article p {
+	text-align: justify;
+}
+
+.callout {
+	color: white;
+	background-color: #293170;
+    padding: 1rem;
+    grid-column: span 2;
+}
+
+footer {
+	margin-top: 1rem;
+	border-top: 1px solid rgb(0, 30, 255);
+	font-size: smaller;
+	text-align: left;
+}
