@@ -38,6 +38,7 @@ img{
     height: auto;
     border-radius: 10px;
     border: 3px solid var(--accent-color);
+    margin:1rem auto;
 }
 section{
     padding: 1rem;
