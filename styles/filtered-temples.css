@@ -127,16 +127,16 @@ figure img {
 }
 figcaption{
     color: var(--accent1-color);
-    animation: fadein 1s ease-in-out;
-    p{
+    animation: fadein 1s ease-in-out;}
+figcaption p{
         font-weight: bold;
         color:var(--accent1-color);
         
     }
-    p:hover{
+figcaption p:hover{
         font-size: 1.1rem;
         color: var(--primary-color)}
-}
+
 @keyframes fadein {
     from { opacity: 0; }
     to { opacity: 1; }
