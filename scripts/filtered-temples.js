@@ -103,12 +103,13 @@ function displayTemples(temples) {
 	const albumContainer = document.getElementById("temple-album");
 	albumContainer.innerHTML = "";
 	let row="";
-	for(let temple of temples){
+	filteredTemples.forEach((temple, index) => {
+        const loadingMode = index < 2 ? "eager" : "lazy";
 		row += `<figure>
-					<img src="${temple.imageUrl}" alt="${temple.templeName}" loading= "lazy">
+					<img src="${temple.imageUrl}" alt="${temple.templeName}" width="400" height="300" loading="${loadingMode}">
 					<figcaption><p class="name">${temple.templeName}</p><p>LOCATION: ${temple.location}</p><p>DEDICATED: ${temple.dedicated}</p><p>AREA: ${temple.area} sq ft</p></figcaption>
 				</figure>`;
-	}
+	});
 	albumContainer.innerHTML = row;
 }
 
