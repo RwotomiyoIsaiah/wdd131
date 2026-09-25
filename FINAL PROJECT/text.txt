@@ -1,0 +1,143 @@
+TABLE
+HTML
+<table>
+  <thead>
+    <tr>
+      <th colspan="4">ACME Wildwest Services</th>
+    </tr>
+    <tr>
+      <td class="blank"></td>
+      <th>Basic</th>
+      <th>Premium</th>
+      <th>Deluxe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Feature 1</th>
+      <td>✔️</td>
+      <td>✔️</td>
+      <td>✔️</td>
+    </tr>
+    <tr>
+      <th>Feature 2</th>
+      <td>❌</td>
+      <td>✔️</td>
+      <td>✔️</td>
+
+    </tr>
+    <tr>
+      <th>Feature 3</th>
+      <td>❌</td>
+      <td>❌</td>
+      <td>✔️</td>
+    </tr>
+  </tbody>
+
+  <caption>Table 1: Account Feature Comparison</caption>
+</table>
+
+CSS 
+body {
+  padding: 5%;
+}
+
+table {
+  width: 400px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+
+  caption {
+    caption-side: bottom;
+    font-size: smaller;
+    padding: 0.2rem;
+  }
+
+  th,
+  td {
+    padding: 0.5em 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    white-space: pre;
+  }
+
+  thead th,
+  tbody td {
+    text-align: center;
+  }
+
+  thead {
+    color: #fff;
+    background: #000;
+
+    th {
+      padding: 1rem;
+      font-size: larger;
+    }
+
+    tr:nth-last-child(1) {
+      background-color: #333;
+    }
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #eee;
+  }
+}
+
+.blank {
+  background-color: #000;
+}
+
+
+OBJECTS JS
+let person = {
+  name: "Antonia Francesca",
+  age: 30,
+  profession: "Software Engineer",
+  hobbies: ["reading", "playing guitar", "hiking"],
+  address: {
+    street: "123 Camino Real",
+    city: "Santa Rosa",
+    country: "Honduras"
+  },
+  isEmployed: true,
+  greet: function() {
+    console.log(`Hello, my name is ${this.name}.`);
+  }
+};
+
+ANOTHER
+let aCourse = {
+  code: "WDD131",
+  title: "Dynamic Web Fundamentals",
+  credits: 2,
+};
+let aCourse = {
+  code: "WDD131",
+  title: "Dynamic Web Fundamentals",
+  credits: 2,
+  sections : [
+    { section: "001", enrolled: 95, instructor: "Roberto Diaz Rodriguez" },
+    { section: "002", enrolled: 80, instructor: "Sarah Gobble" }
+  ]
+};
+function setCourseInformation(course) {
+  document.querySelector("#courseName").innerHTML = `${course.code} – ${course.title}`;
+}
+function renderSections(course) {
+  const tbody = document.querySelector("#sections tbody");
+  let rows = "";
+  for (const section of course.sections) {
+    rows += `<tr>
+      <td>${section.section}</td>
+      <td>${section.enrolled}</td>
+      <td>${section.instructor}</td>
+    </tr>`;
+  }
+  tbody.innerHTML = rows;
+}
+ANOTHER
+let names = ['Nancy','Blessing','Jorge','Svetlana','Bob'];
+et namesB = names.filter(name => name.charAt(0) === 'B');
+let nameLengths = names.map((name) => name.length);
+names.reduce((total, name) => total + name.length, 0) / names.length;

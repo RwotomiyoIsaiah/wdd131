@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 131 TEMPLES ALBUM by RWOTOMIYO ISAIAH .It is a dynamic changing album of temples images.">
+    <meta name="author" content="RWOTOMIYO ISAIAH"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="stylesheet" href="styles/temples-large.css">
+    <title>WDD 131 - DYNAMIC CHANGING TEMPLES ALBUM - RWOTOMIYO ISAIAH</title>
+    <script src="scripts/filtered-temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <h2>TEMPLE ALBUM</h2>
+        <button type="button" id="menu" aria-label="Toggle navigation menu"></button>
+        <nav class="navigation">
+            <a class="active" id="all" target="_blank">Home</a>
+            <a id="old" target="_blank">Old</a>
+            <a id="new" target="_blank">New</a>
+            <a id="large" target="_blank">Large</a>
+            <a id="small" target="_blank">Small</a>       
+        </nav>            
+    </header>
+    <main>
+            <h1>HOME</h1>
+            <div id="temple-album">    
+            </div>
+
+    </main>
+    <footer>
+        <p>Copyright &copy; Year: <span id="currentyear">${current_year}</span> RWOTOMIYO ISAIAH ; UGANDA</p>
+        <p id="last_modified"> Last modified:  <span id="lastmodified"></span></p>
+
+    </footer>
+</body>
+</html>
