@@ -152,7 +152,6 @@ figcaption{
 }
 
 nav a:hover { 
-    text-decoration: overline;
     color: var(--heading-color);
     background-color: var(--accent-color);
 }
