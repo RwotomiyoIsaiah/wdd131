@@ -103,7 +103,7 @@ function displayTemples(temples) {
 	const albumContainer = document.getElementById("temple-album");
 	albumContainer.innerHTML = "";
 	let row="";
-	filteredTemples.forEach((temple, index) => {
+	temples.forEach((temple, index) => {
         const loadingMode = index < 2 ? "eager" : "lazy";
 		row += `<figure>
 					<img src="${temple.imageUrl}" alt="${temple.templeName}" width="400" height="300" loading="${loadingMode}">
