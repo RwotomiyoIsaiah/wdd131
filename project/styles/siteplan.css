@@ -36,11 +36,16 @@ section {
     padding: 20px;
 
 }
-h2 {
+h2{
+    font-family: var(--font-heading);
     color: var(--primary-color);
+    text-align: center;
+}
+h1{font-family: var(--font-heading);
 }
 .color-schema {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 .color-schema div {
