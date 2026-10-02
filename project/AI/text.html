@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nile Haven River Resort - Site Plan</title>
+  <style>
+    /* ===================================================
+       COLOR SCHEME & TYPOGRAPHY VARIABLES
+       =================================================== */
+    :root {
+      --primary-color: #1A365D;    /* Deep Nile Blue: Primary headers, navigation background */
+      --secondary-color: #C29B38;  /* Sunlit Gold: Accents, borders, buttons, callouts */
+      --accent-color: #2E6F40;     /* River Flora Green: Secondary highlights, badges */
+      --bg-color: #FAF8F5;         /* Warm Sand Neutral: Page background */
+      --surface-color: #FFFFFF;    /* Clean White: Card surfaces, sections */
+      --text-color: #2D3748;       /* Charcoal: High-contrast body text */
+      
+      --font-heading: 'Cinzel', Georgia, serif;
+      --font-body: 'Lato', system-ui, -apple-system, sans-serif;
+    }
+
+    /* Google Fonts import */
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lato:wght@400;700&display=swap');
+
+    /* ===================================================
+       GLOBAL STYLES (Applying Color Schema & Typography)
+       =================================================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: #FFFFFF;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 5px solid var(--secondary-color);
+      border-radius: 8px 8px 0 0;
+    }
+
+    header h1 {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      color: var(--secondary-color);
+      font-size: 1.1rem;
+      margin-top: 5px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: var(--surface-color);
+      padding: 40px;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    section {
+      margin-bottom: 40px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #E2E8F0;
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      color: var(--primary-color);
+      border-left: 4px solid var(--secondary-color);
+      padding-left: 12px;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      color: var(--accent-color);
+      margin: 15px 0 10px 0;
+    }
+
+    p, li {
+      font-size: 1rem;
+      color: var(--text-color);
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* ===================================================
+       COLOR PALETTE DISPLAY
+       =================================================== */
+    .color-palette {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .color-swatch {
+      padding: 15px;
+      border-radius: 6px;
+      color: #FFF;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .swatch-primary { background-color: var(--primary-color); }
+    .swatch-secondary { background-color: var(--secondary-color); color: #000; }
+    .swatch-accent { background-color: var(--accent-color); }
+    .swatch-bg { background-color: var(--bg-color); color: #000; border: 1px solid #CCC; }
+
+    /* ===================================================
+       WIREFRAME DIAGRAM REPRESENTATIONS
+       =================================================== */
+    .wireframe-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .wireframe-grid {
+        grid-template-columns: 1fr 2fr;
+      }
+    }
+
+    .wf-box {
+      border: 2px dashed var(--primary-color);
+      background-color: #F7FAFC;
+      padding: 15px;
+      border-radius: 6px;
+    }
+
+    .wf-box h4 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+    }
+
+    .wf-element {
+      border: 1px solid #A0AEC0;
+      background: #EDF2F7;
+      padding: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: #4A5568;
+    }
+
+    .wf-nav { background: #E2E8F0; }
+    .wf-hero { height: 70px; display: flex; align-items: center; justify-content: center; background: #CBD5E0; }
+    .wf-content { background: #EDF2F7; }
+    .wf-footer { background: #CBD5E0; }
+
+    .wf-desktop-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Nile Haven River Resort</h1>
+    <p>Website Planning & Architecture Document</p>
+  </header>
+
+  <main>
+
+    <!-- SECTION 1: SITE NAME & BRANDING -->
+    <section id="site-name">
+      <h2>1. Site Name & Branding</h2>
+      <p><strong>Site Name:</strong> Nile Haven River Resort</p>
+      <p><strong>Optional Domain Availability:</strong> <code>nilehavenresort.com</code> (or <code>nilehaven-ug.com</code>)</p>
+      <p><strong>Rationale:</strong> The name combines "Nile" to immediately anchor the location to the iconic river and "Haven" to evoke tranquility, luxury, and retreat. It clearly communicates to international and local travelers that the venue is a peaceful getaway along the Nile.</p>
+    </section>
+
+    <!-- SECTION 2: SITE PURPOSE -->
+    <section id="site-purpose">
+      <h2>2. Site Purpose</h2>
+      <p>The Nile Haven River Resort website acts as a digital gateway and primary booking engine for guests seeking eco-luxury accommodation and adventure along the Nile River. The site provides comprehensive details on cottage bookings, river adventures (such as white-water rafting, sunset boat cruises, and kayaking), dining menus featuring local cuisine, and direct reservation tools to convert site visitors into confirmed guests.</p>
+    </section>
+
+    <!-- SECTION 3: TARGET AUDIENCE SCENARIOS -->
+    <section id="scenarios">
+      <h2>3. Target Audience Scenarios</h2>
+      <p>The following key user scenarios drive the content structure and user experience of the site:</p>
+      <ul>
+        <li><strong>Scenario 1 (Adventure Traveler):</strong> <em>"What adventure activities (like white-water rafting or river cruises) are offered by the resort, and can I book them together with my accommodation?"</em></li>
+        <li><strong>Scenario 2 (Weekend Getaway Guest):</strong> <em>"What are the nightly rates for riverfront luxury cottages, what amenities are included, and how do I check availability for this weekend?"</em></li>
+      </ul>
+    </section>
+
+    <!-- SECTION 4: COLOR SCHEMA -->
+    <section id="color-schema">
+      <h2>4. Color Schema</h2>
+      <p>The color palette is derived directly from the natural environment of the Nile River Valley—blending water, sunshine, and riverside vegetation to create a luxurious and relaxing feel.</p>
+      
+      <div class="color-palette">
+        <div class="color-swatch swatch-primary">
+          Deep Nile Blue<br><code>#1A365D</code><br><small>Primary Headers, Navbar</small>
+        </div>
+        <div class="color-swatch swatch-secondary">
+          Sunlit Gold<br><code>#C29B38</code><br><small>Buttons, Accents, Borders</small>
+        </div>
+        <div class="color-swatch swatch-accent">
+          River Flora Green<br><code>#2E6F40</code><br><small>Highlights, Badges, Icons</small>
+        </div>
+        <div class="color-swatch swatch-bg">
+          Warm Sand Neutral<br><code>#FAF8F5</code><br><small>Main Site Background</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: TYPOGRAPHY -->
+    <section id="typography">
+      <h2>5. Typography</h2>
+      <p>Two complementary Google Web Fonts were selected to balance rustic elegance with digital readability:</p>
+      <ul>
+        <li>
+          <strong>Primary Heading Font: <code>Cinzel</code> (Serif)</strong>
+          <p>Used for top-level headers (<code>h1</code>, <code>h2</code>, <code>h3</code>). Its classical serif proportions lend an upscale, elegant feel suited for a premium river resort.</p>
+        </li>
+        <li>
+          <strong>Body Font: <code>Lato</code> (Sans-Serif)</strong>
+          <p>Used for all paragraph text, navigation links, and lists. Highly legible on mobile screens and desktop monitors across all font sizes.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- SECTION 6: WIREFRAMES -->
+    <section id="wireframes">
+      <h2>6. Homepage Wireframes</h2>
+      <p>Visual structural representations of the layout in mobile and desktop viewports:</p>
+
+      <div class="wireframe-grid">
+        
+        <!-- Mobile Wireframe -->
+        <div class="wf-box">
+          <h4>Mobile View</h4>
+          <div class="wf-element">Logo & Hamburger Menu</div>
+          <div class="wf-element wf-hero">Hero Image & "Book Now" CTA</div>
+          <div class="wf-element">Cottage Overview (Stacked)</div>
+          <div class="wf-element">Activities Highlights (Stacked)</div>
+          <div class="wf-element">Guest Reviews</div>
+          <div class="wf-element wf-footer">Footer & Contact Details</div>
+        </div>
+
+        <!-- Desktop Wireframe -->
+        <div class="wf-box">
+          <h4>Desktop View</h4>
+          <div class="wf-element wf-nav">Header Logo | Navigation Links (Accommodations, Activities, Dining, Contact) | [Book Now]</div>
+          <div class="wf-element wf-hero">Full-Width Hero Image & Interactive Booking Search Bar</div>
+          
+          <div class="wf-desktop-layout">
+            <div class="wf-element wf-content">
+              <strong>Main Content Area</strong><br>
+              - Featured Luxury Cottages Grid (3 Columns)<br>
+              - River Adventure Experience Cards
+            </div>
+            <div class="wf-element wf-content">
+              <strong>Sidebar</strong><br>
+              - Current Weather & River Conditions<br>
+              - Quick Contact Form<br>
+              - Special Package Deals
+            </div>
+          </div>
+          
+          <div class="wf-element wf-footer">Footer: Sitemap, Social Media Links, Location Map, Copyright</div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

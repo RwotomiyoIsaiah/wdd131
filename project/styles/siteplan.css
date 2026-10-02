@@ -1,0 +1,99 @@
+:root{
+    --primary-color: #0051ff; /* Nile Blue */
+    --secondary-color:  #ffcc00; /* Golden Yellow */
+    --accent-color: #228B22; /* River Green */
+    --bg-color: whitesmoke; /* Sandy Calm */
+    --dark-color:black;
+    --font-heading: 'Cinzel', Georgia, serif;
+    --font-body: 'Lato', Arial, sans-serif;
+
+
+}
+body {
+    width:95%;
+    max-width: 1200px;
+    font-family: var(--font-body);
+    margin: 0 auto;
+    padding: 5px;
+    background-color: var(--bg-color);
+}
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 5px;
+    border: 2px solid var(--accent-color);
+}
+main {
+    padding: 20px;
+}
+section {
+    margin-bottom: 40px;
+    border: 8px solid var(--accent-color);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.897);
+    padding: 20px;
+
+}
+h2 {
+    color: var(--primary-color);
+}
+.color-schema {
+    display: flex;
+    gap: 20px;
+}
+.color-schema div {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid var(--dark-color);
+}
+li{
+    padding: 6px;
+}
+.primary {color: var(--bg-color);
+    background-color: var(--primary-color);
+}
+.secondary {
+    color:var(--dark-color);
+    background-color: var(--secondary-color);   
+}
+.accent {color: var(--bg-color);
+    background-color: var(--accent-color);
+}
+.bg {
+    background-color: var(--bg-color);
+}
+div{
+    padding: 5px;
+}
+.cinzel {
+    font-family: var(--font-heading);
+}
+.lato {
+    font:bold 18px var(--font-body);
+}
+
+.wireframe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.box {
+    text-align: center;
+    padding: 10px ;
+    border: 2px solid var(--dark-color);
+    border-radius: 5px;
+    background-color: var(--bg-color);
+}
+.element, .element-hero, .element-wide-1, .element-wide-2, .footer {
+    text-align: center;
+    padding: 10px ;
+    border: 1px solid var(--dark-color);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
