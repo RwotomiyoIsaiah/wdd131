@@ -58,28 +58,7 @@ h1{font-family: var(--font-heading);
 li{
     padding: 6px;
 }
-.primary {color: var(--bg-color);
-    background-color: var(--primary-color);
-}
-.secondary {
-    color:var(--dark-color);
-    background-color: var(--secondary-color);   
-}
-.accent {color: var(--bg-color);
-    background-color: var(--accent-color);
-}
-.bg {
-    background-color: var(--bg-color);
-}
-div{
-    padding: 5px;
-}
-.cinzel {
-    font-family: var(--font-heading);
-}
-.lato {
-    font:bold 18px var(--font-body);
-}
+
 
 .wireframe-grid {
     display: grid;
