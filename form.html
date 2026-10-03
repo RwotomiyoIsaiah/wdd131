@@ -17,48 +17,49 @@
         <form method="get" action="review.html">
             <fieldset>
                 <h2>Select Product</h2>
-                <label>Product Name *
+                <label for="products">Product Name *</label>
                 <select  id="products" name="product" required>
-                    <option selected disabled>Select a Product to Review</option>
-                </select></label>
+                    <option value="" selected disabled>Select a Product to Review</option>
+                </select>
             </fieldset>
             <fieldset class="radio">
-                <label>
-                    <h2>RATE PRODUCT</h2>
+                <h2>RATE PRODUCT</h2>   
                 <div class="star-rating">
-                    <input type="radio" id="fivestar" name="star" value="5" required>
-                    <label for="fivestar"></label>
+                    <input type="radio" id="fivestar" name="star" value="5" required><label for="fivestar"></label>
                     <input type="radio" id="fourstar" name="star" value="4" required><label for="fourstar"></label>
                     <input type="radio" id="threestar" name="star" value="3" required><label for="threestar"></label>
                     <input type="radio" id="twostar" name="star" value="2" required><label for="twostar"></label>
                     <input type="radio" id="onestar" name="star" value="1" required><label for="onestar"></label>
-                </label>
+
                 </div>
             </fieldset>
             <fieldset>
-                <label>Date of Installation *
+                <label for="date">Date of Installation *</label>
                     <input type="date" id="date" name="date" required>
-                </label>
+                
             </fieldset>
             <fieldset>
                 <h2>Features found useful? (Optional)</h2>
-                <label><input type="checkbox" name="useful" value="durability"> Durability</label>
-                <label><input type="checkbox" name="useful" value="ease"> Ease of Use</label>
-                <label><input type="checkbox" name="useful" value="performance"> Performance</label>
-                <label><input type="checkbox" name="useful" value="design"> Design</label>
+                <label for="useful-durability"><input  id="useful-durability" type="checkbox" name="useful" value="durability"> Durability</label>
+                <label for="useful-ease"><input id="useful-ease" type="checkbox" name="useful" value="ease"> Ease of Use</label>
+                <label for="useful-performance"><input id="useful-performance" type="checkbox" name="useful" value="performance"> Performance</label>
+                <label for="useful-design"><input id="useful-design" type="checkbox" name="useful" value="design"> Design</label>
             </fieldset>
             <fieldset>
-                <label>Your Review (Optional)
+                <label  for="review">Your Review (Optional)
                     <textarea id="review" name="review" rows="4"
                         placeholder=" Type Here"></textarea>
                 </label>
             </fieldset>
             <fieldset>
                 <h2>Customer Credentials (Optional)</h2>
-                <label >FULL NAME <input type="text" id="fname" name="fname" ></label>
-                <label >Email <input type="email" id="email" name="email"></label>
+                <label for="fname">FULL NAME</label>
+                <input type="text" id="fname" name="fname" >
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
             </fieldset>
-            <label href="review.html"><input type="submit" value="Send Review"></label>
+            <a href="review.html"><input type="submit" value="Send Review"></a>
   
         </form>
     </main>

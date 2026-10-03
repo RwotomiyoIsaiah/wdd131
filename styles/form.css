@@ -217,8 +217,31 @@ button{
     margin: 10px;
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    border-color: var(--secondary-color);
+    border-color: var(--accent-color);
     border: none;
     cursor: pointer;
 
+}
+/*MEDIA QUERIES*/
+@media screen and (max-width: 600px) {
+  main {
+    max-width: 100%;
+    margin: 10px;
+    border-radius: 0;
+  }
+
+
+  form{
+    padding: 15px 10px;
+  }
+
+  label {
+    font-size: 13px;
+  }
+
+  .stars > label {
+    font-size: 1.6rem;
+    width: 25px;
+    height: 25px;
+  }
 }
