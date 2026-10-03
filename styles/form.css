@@ -83,7 +83,8 @@ input[type="email"]:focus,
 input[type="date"]:focus,
 select:focus,
 textarea:focus {
-    border-color: var(--secondary-color);
+    border-color: var(--secondary-color)
+    border-width: 2px;
 }
 
 input[type="checkbox"]{
