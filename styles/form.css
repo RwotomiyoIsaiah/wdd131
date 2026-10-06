@@ -127,7 +127,7 @@ input[type="submit"] {
 /*for the star rating */
 .star-rating {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row-reverse; /* Reverses the order of stars */
     flex-wrap: wrap;         /* Allows stars to drop to a new line */
     justify-content: center; /* Keeps wrapped lines centered */
     width: 100%;
@@ -147,6 +147,7 @@ input[type="submit"] {
     transition: 0.2s ease;
     color: var(--secondary-color);
     cursor: pointer;
+     
 }
 
 /* give label a hover state */
@@ -166,6 +167,16 @@ input[type="submit"] {
 /* set full star shape for checked label and those that come after it */
 .star-rating input:checked ~ label:before {
   content:'\2605';
+}
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: var(--accent-color);
+}
+
+/* set full star shape for checked label and those that come after it */
+.star-rating input:checked ~ label,
+.star-rating input:checked ~ label ~ label {
+    content: '\2605'; /* Updates the pseudo-element code cleanly */
 }
   
 
@@ -223,6 +234,23 @@ button{
   main {
     max-width: 100%;
     margin: 2px;
+  }
+  .star-rating {
+    display: flex;
+    flex-direction: column-reverse; /* Reverses the order of stars */
+    flex-wrap: wrap;         /* Allows stars to drop to a new line */
+    justify-content: center; /* Keeps wrapped lines centered */
+    width: 100%;
+    margin: 0 auto;
+  }
+  .star-rating > label {
+    padding-top: 0%;
+    height: 2.1rem;           
+    font-size: 3rem;
+    transition: 0.2s ease;
+    color: var(--secondary-color);
+    cursor: pointer;
+     
   }
 
 
