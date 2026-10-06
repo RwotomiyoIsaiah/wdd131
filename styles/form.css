@@ -245,7 +245,7 @@ button{
   }
   .star-rating > label {
     padding-top: 0%;
-    height: 3rem;           
+    height: 4rem;           
     font-size: 3rem;
     transition: 0.2s ease;
     color: var(--secondary-color);
