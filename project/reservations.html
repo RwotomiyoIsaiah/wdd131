@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESERVATIONS NILE RIVER RESORT</title>
+    <meta name="description" content="Official reservation page for the NILE RIVER RESORT. ">
+    <meta name="author" content="RWOTOMIYO ISAIAH">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/reservations.js" defer></script>
+</head>
+
+<body class="rbody">
+    <header><h1>RESERVATIONS</h1></header>
+    <main class="rmain">
+        <form method="get" id="booking-form">
+            <fieldset>
+                <h2>Customer Credentials (Required)</h2>
+                <label for="fullname">FULL NAME</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+256 700 000 000" required>
+            </fieldset>
+            <fieldset>
+                <h2>Select Your Accommodation</h2>
+                <label for="cottages">Cottage Name *</label>
+                <select  id="cottages" name="cottages" required>
+                    <option value="" selected disabled>Select a Cottage for your stay</option>
+                    <option value="Day Visitor">Day Visitor / Activity Only</option>
+                </select>
+            </fieldset>
+            
+            <fieldset>
+                <label for="checkIn">Date of Arrival *</label>
+                    <input type="date" id="checkIn" name="checkIn" required>
+                <label for="nights">Number of Nights *</label>
+                    <input type="number" id="nights" name="nights" min="1" max="30" required>
+                
+            </fieldset>
+            <fieldset class="form-fieldset">
+                <h2>Memorable Adventures!</h2>
+                <label class="checkbox-label">
+                <input type="checkbox" name="addons" value="White-Water Rafting"> White-Water Rafting Trip
+                </label>
+                <label class="checkbox-label">
+                <input type="checkbox" name="addons" value="Sunset Dinner Cruise"> Sunset Dinner Cruise
+                </label>
+                <label class="checkbox-label">
+                <input type="checkbox" name="addons" value="Kayaking Session"> Guided Nile Kayaking
+                </label>
+            </fieldset>
+            
+            <fieldset>
+                <label  for="review">Anything we should know? (Optional)
+                    <textarea id="review" name="review" rows="4"
+                        placeholder=" Type Here"></textarea>
+                </label>
+            </fieldset>
+           
+            <input type="submit" value="Secure Your Spot !">
+
+            <div id="form-feedback" class="feedback-card hidden"></div>
+
+  
+        </form>
+    </main>
+
+   <footer>
+        <p>Copyright &copy; Year: <span id="currentyear">${current_year}</span> RWOTOMIYO ISAIAH ; UGANDA</p>
+        <p id="last_modified"> Last modified:  <span id="lastmodified"></span></p>
+
+    </footer>
+</body>
+
+</html>
