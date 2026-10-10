@@ -119,13 +119,12 @@ if (filterAll) {
 // Initial 
 displayAccommodations(accommodations);
 
-//show cottages on reservations page
+//show cottages in select on reservations page
 const cottageSelect = document.getElementById("cottages");
 if (cottageSelect) {
   let optionsHtml = `
     <option value="" selected disabled>Select a Cottage for your stay</option>
-    <option value="Day Visitor">Day Visitor / Activity Only</option>
-  `;
+    <option value="Day Visitor">Day Visitor / Activity Only</option>`;
   
  accommodations.forEach(item => {
     optionsHtml += `<option value="${item.name}">${item.name} - $${item.price} / night</option>`;
@@ -134,7 +133,7 @@ if (cottageSelect) {
   cottageSelect.innerHTML = optionsHtml;
 }
 
-// Retrieve from localStorage on page load to verify storage functionality
+// Retrieve from localStorage on page load 
 const savedFilter = localStorage.getItem("lastAccommodationFilter");
 if (savedFilter) {
   console.log(`Restored last filter view from localStorage: ${savedFilter}`);
@@ -147,12 +146,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!form) return;
 
   form.addEventListener("submit", (event) => {
-    event.preventDefault(); // Prevent page reload[cite: 6]
+    event.preventDefault();
 
-    // Collect Form Data into an Object[cite: 6]
+    // Collect Form Data into an Object
     const formData = new FormData(form);
     const addons = [];
-    document.querySelectorAll('input[name="addons"]:checked').forEach(b => addons.push(b.value));[cite: 6]
+    document.querySelectorAll('input[name="addons"]:checked').forEach(b => addons.push(b.value));
 
     const bookingInquiry = {
       fullName: formData.get("fullname"),
@@ -165,17 +164,17 @@ document.addEventListener("DOMContentLoaded", () => {
       nights: formData.get("nights") || "0"
     };
 
-    saveInquiryToLocalStorage(bookingInquiry);[cite: 6]
-    displayFeedback(bookingInquiry, feedbackContainer);[cite: 6]
+    saveInquiryToLocalStorage(bookingInquiry);
+    displayFeedback(bookingInquiry, feedbackContainer);
 
-    form.reset();[cite: 6]
+    form.reset();
   });
 });
 
 function saveInquiryToLocalStorage(inquiryObject) {
   const existingInquiries = JSON.parse(localStorage.getItem("resort_inquiries")) || [];
   existingInquiries.push(inquiryObject);
-  localStorage.setItem("resort_inquiries", JSON.stringify(existingInquiries));[cite: 6]
+  localStorage.setItem("resort_inquiries", JSON.stringify(existingInquiries));
 }
 
 function displayFeedback(data, container) {
@@ -192,7 +191,7 @@ function displayFeedback(data, container) {
       <li><strong>Activities:</strong> ${addonsText}</li>
     </ul>
     <p style="margin-top:10px;"><small>A confirmation email has been sent to ${data.email}.</small></p>
-  `;[cite: 6]
+  `;
 
-  container.scrollIntoView({ behavior: 'smooth' });[cite: 6]
+  container.scrollIntoView({ behavior: 'smooth' });
 }
