@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 :root{
     --primary-color: #001eff; 
@@ -11,8 +11,6 @@
     --dark-color:black;
     --font-heading: 'Cinzel', Georgia, serif;
     --font-body: 'Lato', Arial,Tahoma, Geneva, Verdana ,sans-serif;
-
-
 }
 
 body {
@@ -30,12 +28,13 @@ h1{
     color: var(--secondary-color);
 }
 h2{
+    width: 100%;
     font-family: var(--font-heading);
     color: var(--primary-color);
     text-align: center;
+    margin: 10px;
+    
 }
-
-
 header {
     width: 100%;
     background-color: var(--primary-color);
@@ -43,12 +42,15 @@ header {
     text-align: center;
     justify-content: space-between;
     align-items: center;
-    border-radius: 5px;
-    border: 2px solid var(--accent-color);
+    border-bottom: 5px solid var(--secondary-color);
     position: sticky;
     top: 0;
     z-index: 1000; 
-    margin: 0 auto;
+}
+.header-container,.footer-container,div{
+  margin: 0px;
+  position: relative;
+
 }
 
 .logo-title {
@@ -56,31 +58,25 @@ header {
   font-size: 2rem;
   font-weight: 700;
   color: var(--secondary-color);
-  padding: 15px;
+  padding-top: 0%;
+  padding-bottom: 15px;
 }
 
-
-.hamburger {
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  color: var(--secondary-color);
-  cursor: pointer;
-  display: block;
-}
 
 .nav-menu {
-  display: none;
+  display: none; 
   width: 100%;
   position: absolute;
   top: 100%;
   left: 0;
   background-color: var(--primary-color);
+  z-index: 100;
 }
 
 .nav-menu.open {
-  display: block;
+  display: block; 
 }
+
 
 .nav-menu ul {
   list-style: none;
@@ -91,11 +87,12 @@ header {
 .nav-menu a {
   display: block;
   padding: 15px 20px;
-  color: #FFFFFF;
+  color: var(--bg-color);
   text-decoration: none;
   font-weight: bold;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  transition: background 0.3s;
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+
 }
 
 .nav-menu a:hover,
@@ -103,13 +100,54 @@ header {
   background-color: var(--secondary-color);
   color: var(--primary-color);
 }
+#menu {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.8rem; /* Keeps your crisp sizing scale */
+    color: var(--secondary-color);
+    padding: 8px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+#menu::before {
+	content: "☰";
+    color: var(--accent1-color);
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 10px;
+
+    
+}
+
+#menu.open::before {
+	content: "❌";
+}
+.open {
+	display: block;
+  border-radius: 20px;
+  border: 3px solid var(--accent-color);
+  box-shadow: 0 4px 8px var(--dark-color);
+  
+}
+
+.active::before { 
+    content: "⛅";
+
+}
+
 
 /* HOME PAGE */
 
 .hero {
     width: 100%;
     position: relative;
-    border: 5px solid red;
+    padding: 0px;
+    margin: 0 auto;
 }
 
 .hero img {
@@ -117,7 +155,12 @@ header {
     width: 100%;
     height: auto;
     margin: 0;
-
+    animation: fadein 1.5s ease-in-out;
+    background-color: var(--primary-color);
+}
+@keyframes fadein {
+    from { opacity: 0.7; }
+    to { opacity: 1; }
 }
 
 .hero h1 {
@@ -131,22 +174,69 @@ header {
     opacity: 0.7;
 }
 
+
 .hero article {
     opacity: 0.7;
     left: 0px;
-    bottom: 0px;
+    bottom: 10px;
     position: absolute;
     float: left;
-    background-color: var(--accent2-color);
+    background-color: var(--bg-color);
+    padding: 5px;
+    font-family: var(--font-heading);
+    
 }
+article{
+    display: none;
+  }
 
 .hero article img {
-
     float: right;
     width: 200px;
+    border-radius: 3px;
 }
 body,main{
   width: 100%;
+}
+section img {
+    width: 200px;
+    height: auto;
+    padding:3px;
+    margin: 7px;
+    background-color: var(--secondary-color);
+    border-radius: 7px;
+    box-shadow: 0 4px 8px var(--dark-color);
+
+}
+.awaits,.awaitsr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 7px;
+    justify-content:space-around;
+    align-items: center;
+    font-family: var(--font-heading);
+    margin: 7px auto;
+    margin-top: 50px;
+    width: 95%;
+    border: 5px solid var(--accent-color);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px var(--dark-color);
+}
+.awaitsr img{
+    width: 20rem;
+    height: 15rem;
+
+}
+
+p{
+  padding: 2px;
+  margin: 2px;
+
+}
+figcaption{
+  text-align: center;
 }
 
 
@@ -159,7 +249,7 @@ body,main{
     background-color: var(--bg-color);
     border: 5px solid var(--accent-color);
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.897);
+    box-shadow: 0 4px 8px var(--dark-color);
     padding: 20px;
 }
 .rmain {
@@ -171,7 +261,7 @@ fieldset {
     padding: 15px;
     border: 2px solid var(--accent-color);
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.397);
+    box-shadow: 0 4px 8px var(--dark-color);
     margin-bottom: 22px;
 }
 
@@ -245,13 +335,12 @@ input[type="submit"] {
     margin-top: 10px;
 }
 
-
-  
-
 input[type="submit"]:hover {
     background-color: var(--secondary-color);
     color: var(--primary-color);
     border-color: var(--primary-color);
+    border-radius: 7px;
+    box-shadow: 0 4px 8px var(--dark-color);
 }
 
 footer {
@@ -261,6 +350,92 @@ footer {
     color: var(--dark-color);
     line-height: 1.5;
 }
+/* for ACCOMODATIONS PAGE */
+
+#temple-album {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 20px;
+    
+}
+
+/* Individual accommodation card structure */
+#temple-album figure {
+  flex: 1 1 300px;
+    border: 3px solid var(--accent-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--dark-color);
+    width: 100%;
+    max-width: 370px;
+    
+}
+
+#temple-album img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;/* make images fit into space well*/
+    display: block;
+    border-bottom: 4px solid var(--secondary-color);
+}
+
+
+#temple-album figcaption {
+    padding: 20px;
+    text-align: left; 
+    font-family: var(--font-body);
+}
+
+
+#temple-album figcaption .name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+   
+}
+
+
+#temple-album figcaption p {
+    font-size: 1rem;
+    color: var(--dark-color);
+    margin: 1px ;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.navigation-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px auto;
+    padding: 10px;
+    width: 95%;
+}
+
+.navigation-filters a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    color: var(--primary-color);
+    box-shadow: 0 4px 8px var(--dark-color);
+    
+}
+
+.navigation-filters a:hover,
+.navigation-filters a.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-color: var(--secondary-color);
+    box-shadow: 0 4px 8px var(--dark-color);
+}
+
 /*FOR REVIEW PAGE*/
 div{
     display:flex;
@@ -276,7 +451,7 @@ div{
     font-size: 30px;
     border: 1px solid var(--accent-color);
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.897);
+    box-shadow: 0 4px 8px var(--dark-color);
     padding: 10px;
     margin: 10px;
     background-color: var(--primary-color);
@@ -304,7 +479,7 @@ button{
   border: 10px solid var(--accent-color);
   color: var(--secondary-color);
   border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.397);
+  box-shadow: 0 4px 8px var(--dark-color);
 }
 
 .hidden {
@@ -312,7 +487,7 @@ button{
 }
 .site-footer {
   background-color: var(--primary-color);
-  color: #FFFFFF;
+  color: var(--secondary-color);
   text-align: center;
   padding: 2px;
   margin-top: auto;
@@ -324,14 +499,18 @@ button{
   text-decoration: underline;
 }
 
-.p-20 { padding: 20px; }
-.ref-list { margin-left: 20px; line-height: 1.8; }
+
 
 /* MEDIA QUERIES  */
+ 
 @media (min-width: 600px) {
-  .hamburger {
-    display: none;
+  #menu.hamburger {
+    display: none ;
   }
+   article,r{
+    display: block;
+  }
+  
 
   .nav-menu {
     display: block;
@@ -350,7 +529,8 @@ button{
     border-radius: 4px;
     padding: 8px 16px;
   }
-
+ 
+ 
   .grid-2 {
     grid-template-columns: repeat(2, 1fr);
   }

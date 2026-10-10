@@ -9,11 +9,31 @@
     <meta name="author" content="RWOTOMIYO ISAIAH">
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="stylesheet" href="styles/main.css">
-    <script src="scripts/reservations.js" defer></script>
+    <script src="scripts/index.js" defer></script>
+    <style>
+        header,footer{
+            border-radius: 7px;
+        }
+    </style>
 </head>
 
 <body class="rbody">
-    <header><h1>RESERVATIONS</h1></header>
+    <header>
+    <div class="header-container">
+      <a href="index.html" class="logo-link">
+        <span class="logo-title">RESERVATIONS</span>
+      </a>
+      
+      <button type="button" id="menu" class="hamburger" aria-label="Toggle Navigation Menu"></button>
+      <nav class="navigation nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="accomodations.html">Accommodations</a></li>
+          <li><a href="reservations.html" class="active">Reservations</a></li>
+        </ul>
+      </nav>
+    </div>            
+    </header>
     <main class="rmain">
         <form method="get" id="booking-form">
             <fieldset>
@@ -52,7 +72,7 @@
                 <input type="checkbox" name="addons" value="Sunset Dinner Cruise"> Sunset Dinner Cruise
                 </label>
                 <label class="checkbox-label">
-                <input type="checkbox" name="addons" value="Kayaking Session"> Guided Nile Kayaking
+                <input type="checkbox" name="addons" value="Kayaking Session"> Sight seeing and Games
                 </label>
             </fieldset>
             
@@ -71,11 +91,15 @@
         </form>
     </main>
 
-   <footer>
-        <p>Copyright &copy; Year: <span id="currentyear">${current_year}</span> RWOTOMIYO ISAIAH ; UGANDA</p>
-        <p id="last_modified"> Last modified:  <span id="lastmodified"></span></p>
-
-    </footer>
+    <footer class="site-footer">
+    <div class="footer-container">
+      <p>&copy; <span id="current-year"></span> Nile River Resort</p>
+      <p>Copyright &copy; Year: <span id="currentyear">${current_year}</span> RWOTOMIYO ISAIAH ; UGANDA</p>
+      <p>Contact us at any of these Toll free numbers : 0765876178 : 0783984294 </p>
+      <p>Or through the Email: rwotomiyoisaiah@gmail.com</p>
+      <p id="last_modified"> Last modified:  <span id="lastmodified"></span></p>
+    </div>
+  </footer>
 </body>
 
 </html>

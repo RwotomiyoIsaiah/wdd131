@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 131 TEMPLES ALBUM by RWOTOMIYO ISAIAH .It is a dynamic changing album of temples images.">
+    <meta name="author" content="RWOTOMIYO ISAIAH"> 
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <title>WDD 131 - DYNAMIC CHANGING TEMPLES ALBUM - RWOTOMIYO ISAIAH</title>
+    <script src="scripts/index.js" defer></script>
+</head>
+<body>
+   <header>
+    <div class="header-container">
+      <a href="index.html" class="logo-link">
+        <span class="logo-title">Accommodations</span>
+      </a>
+      
+      <button type="button" id="menu" class="hamburger" aria-label="Toggle Navigation Menu"></button>
+      <nav class="navigation nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="accomodations.html">Accommodations</a></li>
+          <li><a href="reservations.html" class="active">Reservations</a></li>
+        </ul>
+      </nav>
+    </div>            
+</header>
+<main>
+  <nav class="navigation-filters">
+        <a href="#" class="active" id="all">All Rooms</a>
+        <a href="#" id="old">Budget (Under $100)</a>
+        <a href="#" id="new">Riverside Location</a>
+        <a href="#" id="large">Large Groups (4+)</a>
+        <a href="#" id="small">Couples (1-2)</a>       
+    </nav>
+    
+    <div id="temple-album">
+       
+    </div>
+
+</main>
+
+    <footer class="site-footer">
+    <div class="footer-container">
+      <p>&copy; <span id="current-year"></span> Nile River Resort</p>
+      <p>Copyright &copy; Year: <span id="currentyear">${current_year}</span> RWOTOMIYO ISAIAH ; UGANDA</p>
+      <p>Contact us at any of these Toll free numbers : 0765876178 : 0783984294 </p>
+      <p>Or through the Email: rwotomiyoisaiah@gmail.com</p>
+      <p id="last_modified"> Last modified:  <span id="lastmodified"></span></p>
+    </div>
+  </footer>
+</body>
+</html>

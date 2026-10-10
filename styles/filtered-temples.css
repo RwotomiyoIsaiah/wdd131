@@ -123,7 +123,7 @@ figure img {
     height: auto;
     border-radius: 5px;
     box-shadow: 2px 2px 5px var(--accent1-color);
-    animation: fadein 1s ease-in-out;
+    animation: fadein 2s ease-in-out;
 }
 figcaption{
     color: var(--accent1-color);
