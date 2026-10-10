@@ -56,14 +56,23 @@ const accommodations = [
   }
 ];
 
+
 //display
-function displayAccommodations(items) {
+function displayAccommodations(items, filterName = "All") {
   const albumContainer = document.getElementById("temple-album");
+  if (!albumContainer) return;
+
   albumContainer.innerHTML = "";
-  
+  localStorage.setItem("lastAccommodationFilter", filterName);
   let cardsHtml = "";
+
   items.forEach((item, index) => {
-    const loadingMode = index < 2 ? "eager" : "lazy";
+   
+    let loadingMode = "lazy";
+    if (index < 2) {
+      loadingMode = "eager";
+    }
+
     cardsHtml += `
       <figure>
         <img src="${item.imageUrl}" alt="${item.name}" width="400" height="300" loading="${loadingMode}">
@@ -80,31 +89,110 @@ function displayAccommodations(items) {
 }
 
 // FILTER 
-document.querySelector("#all").addEventListener("click", (e) => {
-  e.preventDefault();
-  displayAccommodations(accommodations);
-});
-document.querySelector("#old").addEventListener("click", (e) => {
-  e.preventDefault();
-  const cheapOptions = accommodations.filter(item => item.price < 100);
-  displayAccommodations(cheapOptions);
-});
-document.querySelector("#new").addEventListener("click", (e) => {
-  e.preventDefault();
-  const riverSideOptions = accommodations.filter(item => item.location === "River Side");
-  displayAccommodations(riverSideOptions);
-});
-document.querySelector("#large").addEventListener("click", (e) => {
-  e.preventDefault();
-  const largeGroups = accommodations.filter(item => item.capacity >= 4);
-  displayAccommodations(largeGroups);
-});
-document.querySelector("#small").addEventListener("click", (e) => {
-  e.preventDefault();
-  const smallGroups = accommodations.filter(item => item.capacity <= 2);
-  displayAccommodations(smallGroups);
-});
+const filterAll = document.querySelector("#all");
+if (filterAll) {
+		filterAll.addEventListener("click", (e) => {
+			e.preventDefault();
+			displayAccommodations(accommodations);
+		});
+		document.querySelector("#old").addEventListener("click", (e) => {
+		e.preventDefault();
+		const cheapOptions = accommodations.filter(item => item.price < 100);
+		displayAccommodations(cheapOptions);
+		});
+		document.querySelector("#new").addEventListener("click", (e) => {
+		e.preventDefault();
+		const riverSideOptions = accommodations.filter(item => item.location === "River Side");
+		displayAccommodations(riverSideOptions);
+		});
+		document.querySelector("#large").addEventListener("click", (e) => {
+		e.preventDefault();
+		const largeGroups = accommodations.filter(item => item.capacity >= 4);
+		displayAccommodations(largeGroups);
+		});
+		document.querySelector("#small").addEventListener("click", (e) => {
+		e.preventDefault();
+		const smallGroups = accommodations.filter(item => item.capacity <= 2);
+		displayAccommodations(smallGroups);
+			});}
 
 // Initial 
 displayAccommodations(accommodations);
 
+//show cottages on reservations page
+const cottageSelect = document.getElementById("cottages");
+if (cottageSelect) {
+  let optionsHtml = `
+    <option value="" selected disabled>Select a Cottage for your stay</option>
+    <option value="Day Visitor">Day Visitor / Activity Only</option>
+  `;
+  
+ accommodations.forEach(item => {
+    optionsHtml += `<option value="${item.name}">${item.name} - $${item.price} / night</option>`;
+  });
+  
+  cottageSelect.innerHTML = optionsHtml;
+}
+
+// Retrieve from localStorage on page load to verify storage functionality
+const savedFilter = localStorage.getItem("lastAccommodationFilter");
+if (savedFilter) {
+  console.log(`Restored last filter view from localStorage: ${savedFilter}`);
+}
+// Form submission and confirmation feedback handling
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("booking-form");
+  const feedbackContainer = document.getElementById("form-feedback");
+
+  if (!form) return;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault(); // Prevent page reload[cite: 6]
+
+    // Collect Form Data into an Object[cite: 6]
+    const formData = new FormData(form);
+    const addons = [];
+    document.querySelectorAll('input[name="addons"]:checked').forEach(b => addons.push(b.value));[cite: 6]
+
+    const bookingInquiry = {
+      fullName: formData.get("fullname"),
+      email: formData.get("email"),
+      phone: formData.get("phone") || "N/A",
+      cottage: formData.get("cottages"),
+      checkIn: formData.get("checkIn"),
+      addons: addons,
+      comments: formData.get("review") || "None",
+      nights: formData.get("nights") || "0"
+    };
+
+    saveInquiryToLocalStorage(bookingInquiry);[cite: 6]
+    displayFeedback(bookingInquiry, feedbackContainer);[cite: 6]
+
+    form.reset();[cite: 6]
+  });
+});
+
+function saveInquiryToLocalStorage(inquiryObject) {
+  const existingInquiries = JSON.parse(localStorage.getItem("resort_inquiries")) || [];
+  existingInquiries.push(inquiryObject);
+  localStorage.setItem("resort_inquiries", JSON.stringify(existingInquiries));[cite: 6]
+}
+
+function displayFeedback(data, container) {
+  if (!container) return;
+  const addonsText = data.addons.length > 0 ? data.addons.join(", ") : "None";
+
+  container.classList.remove("hidden");
+  container.innerHTML = `
+    <h1>Thank You, ${data.fullName}!</h1>
+    <h3>You Have Successfully Booked <strong>${data.cottage}</strong>.</h3>
+    <ul>
+      <li><strong>Check-in Date:</strong> ${data.checkIn}</li>
+      <li><strong>Number of Nights:</strong> ${data.nights}</li>
+      <li><strong>Activities:</strong> ${addonsText}</li>
+    </ul>
+    <p style="margin-top:10px;"><small>A confirmation email has been sent to ${data.email}.</small></p>
+  `;[cite: 6]
+
+  container.scrollIntoView({ behavior: 'smooth' });[cite: 6]
+}
